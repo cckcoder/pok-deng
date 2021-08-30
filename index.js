@@ -87,7 +87,7 @@ const getCardScore = (cardObj) => Object.values(cardObj)[0];
 const getFinalScore = (score) => (score >= 10 ? score - 10 : score);
 
 let bet = "";
-let chips = "";
+let chips = 0;
 let msg = "";
 let continuePlay = true
 
@@ -115,7 +115,7 @@ inquirer.prompt(questions_1).then((answers) => {
     } else if (playerScore < dealerScore) {
       msg = "You lose the bet";
     } else {
-      chips += bet;
+      chips += parseInt(bet);
       msg = `You won!!!, receive ${chips} chips`;
     }
     console.log(msg);
